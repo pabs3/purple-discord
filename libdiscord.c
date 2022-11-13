@@ -8109,7 +8109,7 @@ discord_got_avatar(DiscordAccount *da, JsonNode *node, gpointer user_data)
 {
 	DiscordUser *user = user_data;
 
-	if (node != NULL) {
+	if (node != NULL && user != NULL) {
 		gchar *username = discord_create_fullname(user);
 		JsonObject *response = json_node_get_object(node);
 		const gchar *response_str;
